@@ -9,17 +9,27 @@ test("getPerimeter test with 3, 5", () => {
 });
 
 test("getArea with 1001, 4", () => {
-  expect(tutor.getArea(1001, 4)).toBe(NaN);
+  function f(){
+    tutor.getArea(1001, 4);
+  };
+  expect(f).toThrowError(RangeError);
 });
 
 test("getPerimeter with 1001, 4", () => {
-  expect(tutor.getArea(1001, 4)).toBe(NaN);
+  function f() {
+    tutor.getPerimeter(1001, 4);
+  };
+  expect(f).toThrowError(RangeError);
 });
 
 test("getArea with -2, 4", () => {
-  expect(tutor.getArea(-2, 4)).toBe(NaN);
+  expect(() => {
+    tutor.getArea(-2, 4);
+  }).toThrowError(RangeError);
 });
 
 test("getPerimeter with -2, 4", () => {
-  expect(tutor.getPerimeter(-2, 4)).toBe(NaN);
+  expect(() => {
+    tutor.getPerimeter(-2, 4);
+  }).toThrowError(RangeError);
 });

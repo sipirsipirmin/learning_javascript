@@ -2,7 +2,7 @@
 
 function getArea(length, height) {
     if (length > 1000 | length < 0 | height > 1000 | height < 0){
-        return NaN
+        throw new RangeError();
     }
 
     return length * height;
@@ -10,7 +10,7 @@ function getArea(length, height) {
 
 function getPerimeter(length, height) {
     if (length > 1000 | length < 0 | height > 1000 | height < 0) {
-        return NaN
+        throw new RangeError();
     }
     
     return 2 * length + 2 * height;
